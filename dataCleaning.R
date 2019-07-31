@@ -3,8 +3,9 @@ options(java.parameters = "-Xmx4g")
 ####################################################################
 #Import dataset. Convert from SAS to CSV and then read it into R
 ######################################################################
-
-#data <- read.xport("C:/Users/tanna_000/Documents/CKME136/LLCP2017.XPT") #read SAS file
+  library(foreign)
+  data <- read.xport("C:/Users/tanna_000/Documents/CKME136/LLCP2017.XPT") #read SAS file
+  write.csv(data,"C:/Users/tanna_000/Documents/CKME136/2017.csv")
   data2017 <- read.csv("C:/Users/tanna_000/Documents/CKME136/2017.csv", na.strings="NA",header=TRUE)
   df_data <- data.frame(data2017) #store imported data as a data frame
 
